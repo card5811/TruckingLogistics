@@ -55,10 +55,35 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RosterAsset\AssetList.cs" />
+    <Compile Include="RosterAsset\AssetListDetails.cs" />
+    <Compile Include="RosterAsset\CreateAssetList.cs" />
+    <Compile Include="RosterAsset\EditAssetList.cs" />
+    <Compile Include="RosterAsset\DeleteAssetList.cs" />
+    <Compile Include="Trailer\CreateTrailer.cs" />
+    <Compile Include="Trailer\DeleteTrailer.cs" />
+    <Compile Include="Trailer\EditTrailer.cs" />
+    <Compile Include="Trailer\TrailerDetails.cs" />
+    <Compile Include="Trailer\TrailerList.cs" />
+    <Compile Include="Truck\CreateTruck.cs" />
+    <Compile Include="Truck\DeleteTruck.cs" />
+    <Compile Include="Truck\EditTruck.cs" />
+    <Compile Include="Truck\TruckDetail.cs" />
+    <Compile Include="Truck\TruckList.cs" />
+    <Compile Include="UserProfile\CreateUser.cs" />
+    <Compile Include="UserProfile\DeleteUser.cs" />
+    <Compile Include="UserProfile\EditUser.cs" />
+    <Compile Include="UserProfile\UserList.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TruckingLogistics.Data\TruckingLogistics.Data.csproj">
+      <Project>{2B24E245-C705-4194-A0A0-7FC47EF1B90D}</Project>
+      <Name>TruckingLogistics.Data</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,0 +1,66 @@
+﻿@model TruckingLogistics.Models.Trailer.TrailerDetails
+
+@{
+    ViewBag.Title = "TrailerDetails";
+}
+
+<h2>TrailerDetails</h2>
+
+<div>
+    <h4>TrailerDetails</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TrailerId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TrailerId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TrailerNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TrailerNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TrailerVinNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TrailerVinNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TrailerType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TrailerType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TrailerMileage)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TrailerMileage)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Comment)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Comment)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.TrailerId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

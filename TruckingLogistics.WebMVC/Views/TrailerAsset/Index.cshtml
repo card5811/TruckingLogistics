@@ -1,0 +1,60 @@
+﻿@model IEnumerable<TruckingLogistics.Models.Trailer.TrailerList>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TrailerId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TrailerNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TrailerVinNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TrailerType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TrailerMileage)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Comment)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TrailerId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TrailerNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TrailerVinNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TrailerMileage)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Comment)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.TrailerId }) |
+            @Html.ActionLink("Details", "Details", new {  id=item.TrailerId }) |
+            @Html.ActionLink("Delete", "Delete", new {  id=item.TrailerId })
+        </td>
+    </tr>
+}
+
+</table>

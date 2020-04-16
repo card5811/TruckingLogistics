@@ -1,0 +1,74 @@
+﻿@model TruckingLogistics.Models.RosterAsset.AssetListDetails
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>AssetListDetails</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.RosterId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RosterId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LastName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LastName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Make)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Make)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Model)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Model)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TruckNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TruckNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TrailerNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TrailerNumber)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.RosterId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
