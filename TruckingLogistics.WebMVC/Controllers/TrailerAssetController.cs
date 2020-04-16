@@ -73,6 +73,7 @@ namespace TruckingLogistics.WebMVC.Controllers
             var model =
                 new EditTrailer
                 {
+                    TrailerId = detail.TrailerId,
                     TrailerNumber = detail.TrailerNumber,
                     TrailerMileage = detail.TrailerMileage,
                     TrailerType = detail.TrailerType,

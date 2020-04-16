@@ -11,6 +11,7 @@ namespace TruckingLogistics.Models.Trailer
    
     public class CreateTrailer
     {
+        public int TrailerId { get; set; }
         public string TrailerNumber { get; set; }
         public string TrailerVinNumber { get; set; }
         public TrailerType TrailerType { get; set; }
