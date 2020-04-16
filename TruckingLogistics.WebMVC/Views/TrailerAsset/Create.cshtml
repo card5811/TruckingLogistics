@@ -4,7 +4,7 @@
     ViewBag.Title = "Create";
 }
 
-<h2>Create</h2>
+<h2>Create Trailer</h2>
 
 
 @using (Html.BeginForm()) 
@@ -12,7 +12,7 @@
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>CreateTrailer</h4>
+        <h4>Please add the following information to add your trailer.</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
