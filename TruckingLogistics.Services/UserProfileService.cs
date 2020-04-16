@@ -50,9 +50,11 @@ namespace TruckingLogistics.Services
                             e =>
                                 new UserList
                                 {
+                                    CompanyUserId = e.CompanyUserId,
                                     UserName = e.UserName,
                                     FirstName = e.FirstName,
                                     LastName = e.LastName,
+                                    Email = e.Email
                                 }
                         );
 
@@ -60,7 +62,7 @@ namespace TruckingLogistics.Services
             }
         }
 
-        public UserList GetUserByUserName(string userName)
+        public UserDetail GetUserByUserName(string userName)
         {
             using (var ctx = new ApplicationDbContext())
             {
@@ -69,7 +71,7 @@ namespace TruckingLogistics.Services
                         .UserProfiles
                         .Single(e => e.UserName == userName && e.UserId == _userId);
                 return
-                    new UserList
+                    new UserDetail
                     {
                         CompanyUserId = entity.CompanyUserId,
                         UserName = entity.UserName,
@@ -79,16 +81,16 @@ namespace TruckingLogistics.Services
             }
         }
 
-        public UserList GetUserById(int id)
+        public UserDetail GetUserById(int id)
         {
             using (var ctx = new ApplicationDbContext())
             {
                 var entity =
                     ctx
                         .UserProfiles
-                        .Single(e => e.CompanyUserId == e.CompanyUserId && e.UserId == _userId);
+                        .Single(e => e.CompanyUserId == id /*&& e.UserId == _userId*/);
                 return
-                    new UserList
+                    new UserDetail
                     {
                         CompanyUserId = entity.CompanyUserId,
                         UserName = entity.UserName,
@@ -106,7 +108,7 @@ namespace TruckingLogistics.Services
                 var entity =
                     ctx
                     .UserProfiles
-                    .Single(e => e.UserId == _userId);
+                    .Single(e => e.CompanyUserId == model.CompanyUserId);
 
                 entity.UserName = model.UserName;
                 entity.FirstName = model.FirstName;
@@ -117,14 +119,14 @@ namespace TruckingLogistics.Services
             }
         }
 
-        public bool DeleteUserById(int id)
+        public bool DeleteUser(int userId)
         {
             using (var ctx = new ApplicationDbContext())
             {
                 var entity =
                     ctx
                     .UserProfiles
-                    .Single(e => e.CompanyUserId == e.CompanyUserId && e.UserId == _userId);
+                    .Single(e => e.CompanyUserId == userId);
 
                 ctx.UserProfiles.Remove(entity);
 

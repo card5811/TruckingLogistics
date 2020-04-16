@@ -1,13 +1,13 @@
-﻿@model TruckingLogistics.Models.User.UserList
+﻿@model TruckingLogistics.Models.User.UserDetail
 
 @{
-    ViewBag.Title = "UserDetails";
+    ViewBag.Title = "Details";
 }
 
-<h2>UserDetails</h2>
+<h2>Details</h2>
 
 <div>
-    <h4>UserList</h4>
+    <h4>UserDetail</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -42,9 +42,17 @@
             @Html.DisplayFor(model => model.LastName)
         </dd>
 
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.CompanyUserId }) |
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
     @Html.ActionLink("Back to List", "Index")
 </p>

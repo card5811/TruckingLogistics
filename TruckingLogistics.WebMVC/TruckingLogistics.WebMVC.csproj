@@ -240,9 +240,7 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\UserProfile\Index.cshtml" />
     <Content Include="Views\UserProfile\Create.cshtml" />
-    <Content Include="Views\UserProfile\Detail.cshtml" />
     <Content Include="Views\UserProfile\Edit.cshtml" />
-    <Content Include="Views\UserProfile\Delete.cshtml" />
     <Content Include="Views\TruckAsset\Create.cshtml" />
     <Content Include="Views\TruckAsset\Details.cshtml" />
     <Content Include="Views\TruckAsset\Edit.cshtml" />
@@ -258,6 +256,8 @@
     <Content Include="Views\AssetRoster\Edit.cshtml" />
     <Content Include="Views\AssetRoster\Delete.cshtml" />
     <Content Include="Views\TruckAsset\Index.cshtml" />
+    <Content Include="Views\UserProfile\Details.cshtml" />
+    <Content Include="Views\UserProfile\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

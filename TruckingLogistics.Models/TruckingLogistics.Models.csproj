@@ -73,6 +73,7 @@
     <Compile Include="UserProfile\CreateUser.cs" />
     <Compile Include="UserProfile\DeleteUser.cs" />
     <Compile Include="UserProfile\EditUser.cs" />
+    <Compile Include="UserProfile\UserDetail.cs" />
     <Compile Include="UserProfile\UserList.cs" />
   </ItemGroup>
   <ItemGroup>

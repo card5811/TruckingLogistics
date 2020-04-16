@@ -70,6 +70,7 @@ namespace TruckingLogistics.WebMVC.Controllers
             var model =
                 new EditUser
                 {
+                    CompanyUserId = detail.CompanyUserId,
                     UserName = detail.UserName,
                     FirstName = detail.FirstName,
                     LastName = detail.LastName,
@@ -121,7 +122,7 @@ namespace TruckingLogistics.WebMVC.Controllers
         {
             var service = CreateUserProfileService();
 
-            service.DeleteUserById(id);
+            service.DeleteUser(id);
 
             TempData["SaveResult"] = "User was deleted";
 
