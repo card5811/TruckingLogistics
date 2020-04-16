@@ -23,8 +23,9 @@ namespace TruckingLogistics.Services
                 new AssetRoster
                 {
                     UserId = _userId,
+                    RosterId = model.RosterId,
                     CompanyUserId = model.CompanyUserId,
-                    TruckId = model.CompanyUserId,
+                    TruckId = model.TruckId,
                     TrailerId = model.TrailerId
                 };
 
@@ -35,7 +36,7 @@ namespace TruckingLogistics.Services
             }
         }
 
-        public IEnumerable<AssetList> GetAssetLists()
+        public IEnumerable<AssetList> GetAssets()
         {
             using (var ctx = new ApplicationDbContext())
             {
@@ -47,11 +48,13 @@ namespace TruckingLogistics.Services
                             e =>
                                 new AssetList
                                 {
+                                    RosterId = e.RosterId,
                                     FirstName = e.UserProfile.FirstName,
                                     TruckNumber = e.TruckAsset.TruckNumber,
                                     TrailerNumber = e.TrailerAsset.TrailerNumber
                                 }
                                 );
+
                 return query.ToArray();
             }
         }
@@ -63,7 +66,7 @@ namespace TruckingLogistics.Services
                 var entity =
                     ctx
                         .AssetRosters
-                        .Single(e => e.RosterId == id && e.UserId == _userId);
+                        .Single(e => e.RosterId == id);
                 return
                     new AssetListDetails
                     {
@@ -85,11 +88,11 @@ namespace TruckingLogistics.Services
                 var entity =
                     ctx
                     .AssetRosters
-                    .Single(e => e.RosterId == model.RosterId && e.UserId == _userId);
+                    .Single(e => e.RosterId == model.RosterId);
 
-                entity.UserProfile.FirstName = model.FirstName;
-                entity.TruckAsset.TruckNumber = model.TruckNumber;
-                entity.TrailerAsset.TrailerNumber = model.TrailerNumber;
+                entity.UserProfile.CompanyUserId = model.CompanyUserId;
+                entity.TruckAsset.TruckId = model.TruckId;
+                entity.TrailerAsset.TrailerId = model.TrailerId;
 
                 return ctx.SaveChanges() == 1;
             }
@@ -97,13 +100,16 @@ namespace TruckingLogistics.Services
 
         public bool DeleteFromRoster(int rosterId)
         {
-            using (var context = new ApplicationDbContext())
+            using (var ctx = new ApplicationDbContext())
             {
-                var entity = context.AssetRosters.First(e => e.RosterId == rosterId && e.UserId == _userId);
-                context.AssetRosters.Remove(entity);
-                context.SaveChanges();
+                var entity =
+                    ctx
+                    .AssetRosters
+                    .Single(e => e.RosterId == rosterId);
 
-                return context.SaveChanges() == 1;
+                ctx.AssetRosters.Remove(entity);
+
+                return ctx.SaveChanges() == 1;
             }
         }
     }

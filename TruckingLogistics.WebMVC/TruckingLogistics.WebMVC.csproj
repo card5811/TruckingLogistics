@@ -250,14 +250,14 @@
     <Content Include="Views\TrailerAsset\Details.cshtml" />
     <Content Include="Views\TrailerAsset\Edit.cshtml" />
     <Content Include="Views\TrailerAsset\Delete.cshtml" />
-    <Content Include="Views\AssetRoster\Index.cshtml" />
-    <Content Include="Views\AssetRoster\Create.cshtml" />
-    <Content Include="Views\AssetRoster\Details.cshtml" />
-    <Content Include="Views\AssetRoster\Edit.cshtml" />
-    <Content Include="Views\AssetRoster\Delete.cshtml" />
     <Content Include="Views\TruckAsset\Index.cshtml" />
     <Content Include="Views\UserProfile\Details.cshtml" />
     <Content Include="Views\UserProfile\Delete.cshtml" />
+    <Content Include="Views\Asset\Index.cshtml" />
+    <Content Include="Views\Asset\Create.cshtml" />
+    <Content Include="Views\Asset\Details.cshtml" />
+    <Content Include="Views\Asset\Edit.cshtml" />
+    <Content Include="Views\Asset\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

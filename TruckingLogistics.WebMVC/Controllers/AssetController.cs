@@ -17,7 +17,7 @@ namespace TruckingLogistics.WebMVC.Controllers
         {
             var userId = Guid.Parse(User.Identity.GetUserId());
             var service = new AssetRosterServices(userId);
-            var model = service.GetAssetLists();
+            var model = service.GetAssets();
 
             return View(model);
         }
@@ -49,10 +49,10 @@ namespace TruckingLogistics.WebMVC.Controllers
         }
 
         //Get: Details/AssetRoster
-        public ActionResult Details()
+        public ActionResult Details(int id)
         {
             var svc = CreateAssetRoster();
-            var model = svc.GetAssetLists();
+            var model = svc.GetAssetById(id);
 
             return View(model);
         }
@@ -65,15 +65,15 @@ namespace TruckingLogistics.WebMVC.Controllers
         //Return Asset and the view  
         public ActionResult Edit(int id)
         {
-
             var service = CreateAssetRoster();
             var detail = service.GetAssetById(id);
             var model =
                 new EditAssetList
                 {
-                    FirstName = detail.FirstName,
-                    TruckNumber = detail.TruckNumber,
-                    TrailerNumber = detail.TrailerNumber
+                    RosterId = detail.RosterId,
+                    CompanyUserId = detail.CompanyUserId,
+                    TruckId = detail.TrailerId,
+                    TrailerId = detail.TrailerId
                 };
             return View(model);
         }
@@ -106,7 +106,7 @@ namespace TruckingLogistics.WebMVC.Controllers
         public ActionResult Delete(int id)
         {
             var svc = CreateAssetRoster();
-            var model = svc.DeleteFromRoster(id);
+            var model = svc.GetAssetById(id);
 
             return View(model);
         }

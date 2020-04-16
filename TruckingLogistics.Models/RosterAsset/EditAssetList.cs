@@ -11,10 +11,10 @@ namespace TruckingLogistics.Models.RosterAsset
     {
         public int RosterId { get; set; }
 
-        public string FirstName { get; set; }
+        public int CompanyUserId { get; set; }
 
-        public string TruckNumber { get; set; }
+        public int TruckId { get; set; }
 
-        public string TrailerNumber { get; set; }
+        public int TrailerId { get; set; }
     }
 }

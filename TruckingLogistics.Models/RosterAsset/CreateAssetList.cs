@@ -9,6 +9,7 @@ namespace TruckingLogistics.Models.RosterAsset
 {
     public class CreateAssetList
     {
+        public int RosterId { get; set; }
         public int CompanyUserId { get; set; }
         public int TruckId { get; set; }
         public int TrailerId { get; set; }
