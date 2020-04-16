@@ -21,7 +21,7 @@
             @Html.DisplayNameFor(model => model.TrailerVinNumber)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.TrailerType)
+            @Html.DisplayNameFor(model => model.TypeOfTrailer)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.TrailerMileage)
@@ -33,28 +33,31 @@
     </tr>
 
 @foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.TrailerId)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TrailerNumber)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TrailerVinNumber)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TrailerMileage)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Comment)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.TrailerId }) |
-            @Html.ActionLink("Details", "Details", new {  id=item.TrailerId }) |
-            @Html.ActionLink("Delete", "Delete", new {  id=item.TrailerId })
-        </td>
-    </tr>
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.TrailerId)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.TrailerNumber)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.TrailerVinNumber)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.TypeOfTrailer)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.TrailerMileage)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Comment)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.TrailerId }) |
+        @Html.ActionLink("Details", "Details", new { id = item.TrailerId }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.TrailerId })
+    </td>
+</tr>
 }
 
 </table>

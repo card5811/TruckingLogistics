@@ -76,7 +76,7 @@ namespace TruckingLogistics.Services
                         TruckModel = entity.TruckAsset.TruckModel,
                         TruckNumber = entity.TruckAsset.TruckNumber,
                         TrailerNumber = entity.TrailerAsset.TrailerNumber,
-                        TypeOfTrailer = entity.TrailerAsset.TrailerType
+                        TypeOfTrailer = entity.TrailerAsset.TypeOfTrailer
                     };
             }
         }

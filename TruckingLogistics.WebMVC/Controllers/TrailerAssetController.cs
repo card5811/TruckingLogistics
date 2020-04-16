@@ -52,7 +52,7 @@ namespace TruckingLogistics.WebMVC.Controllers
         }
 
         //Get: Trailer/Details/Id
-        public ActionResult TrailerDetails(int id)
+        public ActionResult Details(int id)
         {
             var svc = CreateTrailerService();
             var model = svc.GetTrailerById(id);
@@ -76,7 +76,7 @@ namespace TruckingLogistics.WebMVC.Controllers
                     TrailerId = detail.TrailerId,
                     TrailerNumber = detail.TrailerNumber,
                     TrailerMileage = detail.TrailerMileage,
-                    TrailerType = detail.TrailerType,
+                    TypeOfTrailer = detail.TypeOfTrailer,
                     Comment = detail.Comment
                 };
             return View(model);

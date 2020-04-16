@@ -193,6 +193,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <None Include="Properties\PublishProfiles\HermesLogistics - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -247,7 +248,6 @@
     <Content Include="Views\TruckAsset\Delete.cshtml" />
     <Content Include="Views\TrailerAsset\Index.cshtml" />
     <Content Include="Views\TrailerAsset\Create.cshtml" />
-    <Content Include="Views\TrailerAsset\Details.cshtml" />
     <Content Include="Views\TrailerAsset\Edit.cshtml" />
     <Content Include="Views\TrailerAsset\Delete.cshtml" />
     <Content Include="Views\TruckAsset\Index.cshtml" />
@@ -258,9 +258,11 @@
     <Content Include="Views\Asset\Details.cshtml" />
     <Content Include="Views\Asset\Edit.cshtml" />
     <Content Include="Views\Asset\Delete.cshtml" />
+    <Content Include="Views\TrailerAsset\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\PictureAssets\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

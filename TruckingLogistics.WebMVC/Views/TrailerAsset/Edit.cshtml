@@ -41,10 +41,10 @@
 
         <div class="form-group">
             <div class="form-group">
-                @Html.LabelFor(model => model.TrailerType, "Trailer Type", htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.LabelFor(model => model.TypeOfTrailer, "Trailer Type", htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-8 col-md-offset-2">
-                    @Html.EnumDropDownListFor(model => model.TrailerType, "Select")
-                    @Html.ValidationMessageFor(model => model.TrailerType, "", new { @class = "text-danger" })
+                    @Html.EnumDropDownListFor(model => model.TypeOfTrailer, "Select")
+                    @Html.ValidationMessageFor(model => model.TypeOfTrailer, "", new { @class = "text-danger" })
                 </div>
             </div>
         </div>

@@ -13,7 +13,7 @@ namespace TruckingLogistics.Data.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "202004160549134_firstmigration"; }
+            get { return "202004161229439_firstmigration"; }
         }
         
         string IMigrationMetadata.Source

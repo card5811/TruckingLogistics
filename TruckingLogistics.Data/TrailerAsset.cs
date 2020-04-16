@@ -22,7 +22,7 @@ namespace TruckingLogistics.Data
         public string TrailerVinNumber { get; set; }
 
         [Required]
-        public TrailerType TrailerType { get; set; }
+        public TrailerType TypeOfTrailer { get; set; }
 
         public int? TrailerMileage { get; set; }
 

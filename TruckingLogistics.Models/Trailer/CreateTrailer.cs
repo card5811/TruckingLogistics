@@ -14,7 +14,7 @@ namespace TruckingLogistics.Models.Trailer
         public int TrailerId { get; set; }
         public string TrailerNumber { get; set; }
         public string TrailerVinNumber { get; set; }
-        public TrailerType TrailerType { get; set; }
+        public TrailerType TypeOfTrailer { get; set; }
         public int? TrailerMileage { get; set; }
 
         [MaxLength(5000, ErrorMessage = "Only 5,000 characters allowed.")]

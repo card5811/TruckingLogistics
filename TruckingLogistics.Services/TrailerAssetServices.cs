@@ -28,7 +28,8 @@ namespace TruckingLogistics.Services
                     TrailerNumber = model.TrailerNumber,
                     TrailerVinNumber = model.TrailerVinNumber,
                     Comment = model.Comment,
-                    TrailerType = model.TrailerType,
+                    TypeOfTrailer = model.TypeOfTrailer,
+                    TrailerMileage = model.TrailerMileage
                 };
 
             using (var ctx = new ApplicationDbContext())
@@ -55,7 +56,8 @@ namespace TruckingLogistics.Services
                             TrailerNumber = e.TrailerNumber,
                             TrailerVinNumber = e.TrailerVinNumber,
                             Comment = e.Comment,
-                            TrailerType = e.TrailerType,
+                            TypeOfTrailer = e.TypeOfTrailer,
+                            TrailerMileage = e.TrailerMileage
                         }
                         );
 
@@ -78,7 +80,8 @@ namespace TruckingLogistics.Services
                         TrailerNumber = entity.TrailerNumber,
                         TrailerVinNumber = entity.TrailerVinNumber,
                         Comment = entity.Comment,
-                        TrailerType = entity.TrailerType,
+                        TypeOfTrailer = entity.TypeOfTrailer,
+                        TrailerMileage = entity.TrailerMileage
                     };
             }
         }
@@ -95,7 +98,8 @@ namespace TruckingLogistics.Services
                 entity.TrailerNumber = model.TrailerNumber;
                 entity.TrailerVinNumber = model.TrailerVinNumber;
                 entity.Comment = model.Comment;
-                entity.TrailerType = model.TrailerType;
+                entity.TypeOfTrailer = model.TypeOfTrailer;
+                entity.TrailerMileage = model.TrailerMileage;
 
                 return ctx.SaveChanges() == 1;
             }
