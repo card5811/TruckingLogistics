@@ -17,7 +17,7 @@ namespace TruckingLogistics.Models.RosterAsset
 
         public string Make { get; set; }
 
-        public string Model { get; set; }
+        public string TruckModel { get; set; }
 
         public string TruckNumber { get; set; }
 

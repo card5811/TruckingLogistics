@@ -24,6 +24,7 @@ namespace TruckingLogistics.Services
                 new TrailerAsset()
                 {
                     UserId = _userId,
+                    TrailerId = model.TrailerId,
                     TrailerNumber = model.TrailerNumber,
                     TrailerVinNumber = model.TrailerVinNumber,
                     Comment = model.Comment,
@@ -62,16 +63,16 @@ namespace TruckingLogistics.Services
             }
         }
 
-        public TrailerList GetTrailerById(int id)
+        public TrailerDetails GetTrailerById(int id)
         {
             using (var ctx = new ApplicationDbContext())
             {
                 var entity =
                     ctx
                         .TrailerAssets
-                        .Single(e => e.TrailerId == id && e.UserId == _userId);
+                        .Single(e => e.TrailerId == id);
                 return
-                    new TrailerList
+                    new TrailerDetails
                     {
                         TrailerId = entity.TrailerId,
                         TrailerNumber = entity.TrailerNumber,
@@ -89,7 +90,7 @@ namespace TruckingLogistics.Services
                 var entity =
                     ctx
                     .TrailerAssets
-                    .Single(e => e.TrailerId == model.TrailerId && e.UserId == _userId);
+                    .Single(e => e.TrailerId == model.TrailerId);
 
                 entity.TrailerNumber = model.TrailerNumber;
                 entity.TrailerVinNumber = model.TrailerVinNumber;
@@ -107,7 +108,7 @@ namespace TruckingLogistics.Services
                 var entity =
                     ctx
                     .TrailerAssets
-                    .Single(e => e.TrailerId == id && e.UserId == _userId);
+                    .Single(e => e.TrailerId == id);
 
                 ctx.TrailerAssets.Remove(entity);
 

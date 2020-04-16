@@ -11,7 +11,7 @@ namespace TruckingLogistics.Models.Truck
         public int TruckId { get; set; }
         public string TruckNumber { get; set; }
         public string Make { get; set; }
-        public string Model { get; set; }
+        public string TruckModel { get; set; }
         public int? Mileage { get; set; }
         public string Comment { get; set; }
     }

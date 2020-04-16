@@ -88,7 +88,7 @@ namespace TruckingLogistics.Services
                 var entity =
                     ctx
                         .UserProfiles
-                        .Single(e => e.CompanyUserId == id /*&& e.UserId == _userId*/);
+                        .Single(e => e.CompanyUserId == id);
                 return
                     new UserDetail
                     {

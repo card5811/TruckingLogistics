@@ -23,8 +23,10 @@ namespace TruckingLogistics.Services
                 new TruckAsset()
                 {
                     UserId = _userId,
+                    TruckId = model.TruckId,
+                    TruckNumber = model.TruckNumber,
                     Make = model.Make,
-                    Model = model.Model,
+                    TruckModel = model.TruckModel,
                     Mileage = model.Mileage,
                     Comment = model.Comment,
                 };
@@ -52,7 +54,7 @@ namespace TruckingLogistics.Services
                             TruckId = e.TruckId,
                             TruckNumber = e.TruckNumber,
                             Make = e.Make,
-                            Model = e.Model,
+                            TruckModel = e.TruckModel,
                             Mileage = e.Mileage
                         }
                         );
@@ -61,21 +63,21 @@ namespace TruckingLogistics.Services
             }
         }
 
-        public TruckList GetTruckById(int id)
+        public TruckDetail GetTruckById(int id)
         {
             using (var ctx = new ApplicationDbContext())
             {
                 var entity =
                     ctx
                         .TruckAssets
-                        .Single(e => e.TruckId == id && e.UserId == _userId);
+                        .Single(e => e.TruckId == id);
                 return
-                    new TruckList
+                    new TruckDetail
                     {
                         TruckId = entity.TruckId,
                         TruckNumber = entity.TruckNumber,
                         Make = entity.Make,
-                        Model = entity.Model,
+                        TruckModel = entity.TruckModel,
                         Mileage = entity.Mileage,
                         Comment = entity.Comment
                     };
@@ -89,11 +91,11 @@ namespace TruckingLogistics.Services
                 var entity =
                     ctx
                     .TruckAssets
-                    .Single(e => e.TruckId == model.TruckId && e.UserId == _userId);
+                    .Single(e => e.TruckId == model.TruckId);
 
                 entity.TruckNumber = model.TruckNumber;
                 entity.Make = model.Make;
-                entity.Model = model.Model;
+                entity.TruckModel = model.TruckModel;
                 entity.Mileage = model.Mileage;
                 entity.Comment = model.Comment;
 
@@ -108,7 +110,7 @@ namespace TruckingLogistics.Services
                 var entity =
                     ctx
                     .TruckAssets
-                    .Single(e => e.TruckId == id && e.UserId == _userId);
+                    .Single(e => e.TruckId == id);
 
                 ctx.TruckAssets.Remove(entity);
 

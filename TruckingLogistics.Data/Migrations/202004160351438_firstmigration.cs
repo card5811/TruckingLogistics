@@ -47,7 +47,7 @@ namespace TruckingLogistics.Data.Migrations
                         UserId = c.Guid(nullable: false),
                         TruckNumber = c.String(nullable: false),
                         Make = c.String(nullable: false),
-                        Model = c.String(nullable: false),
+                        TruckModel = c.String(nullable: false),
                         Mileage = c.Int(),
                         Comment = c.String(),
                     })

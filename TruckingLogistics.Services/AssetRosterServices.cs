@@ -70,7 +70,7 @@ namespace TruckingLogistics.Services
                         FirstName = entity.UserProfile.FirstName,
                         LastName = entity.UserProfile.LastName,
                         Make = entity.TruckAsset.Make,
-                        Model = entity.TruckAsset.Model,
+                        TruckModel = entity.TruckAsset.TruckModel,
                         TruckNumber = entity.TruckAsset.TruckNumber,
                         TrailerNumber = entity.TrailerAsset.TrailerNumber,
                         TypeOfTrailer = entity.TrailerAsset.TrailerType

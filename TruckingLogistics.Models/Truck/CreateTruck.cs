@@ -19,9 +19,9 @@ namespace TruckingLogistics.Models.Truck
         public string Make { get; set; }
 
         [Required]
-        [MinLength(2, ErrorMessage = "Please enter correct model of truck")]
+        [MinLength(1, ErrorMessage = "Please enter correct model of truck")]
         [MaxLength(50, ErrorMessage = "Please enter correct model of truck")]
-        public string Model { get; set; }
+        public string TruckModel { get; set; }
 
         public int? Mileage { get; set; }
 

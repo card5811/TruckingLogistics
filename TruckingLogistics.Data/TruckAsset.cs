@@ -21,7 +21,7 @@ namespace TruckingLogistics.Data
         public string Make { get; set; }
 
         [Required]
-        public string Model { get; set; }
+        public string TruckModel { get; set; }
 
         public int? Mileage { get; set; }
 
