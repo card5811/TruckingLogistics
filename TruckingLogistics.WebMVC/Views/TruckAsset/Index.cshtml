@@ -4,7 +4,7 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Trucks</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
@@ -32,32 +32,55 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.TruckId)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TruckNumber)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Make)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TruckModel)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Mileage)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Comment)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id = item.TruckId }) |
-            @Html.ActionLink("Details", "Details", new { id = item.TruckId }) |
-            @Html.ActionLink("Delete", "Delete", new { id = item.TruckId })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TruckId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TruckNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Make)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TruckModel)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Mileage)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Comment)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.TruckId }) |
+                @Html.ActionLink("Details", "Details", new { id = item.TruckId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.TruckId })
+            </td>
+        </tr>
+    }
 
 </table>
+
+<style>
+    .h2 {
+        color: gold;
+    }
+
+    body {
+        background-image: url('../../Content/Assets/semis.jpeg');
+        background-repeat: no-repeat;
+        background-size: 100%;
+    }
+
+    .table {
+        position: center center;
+        width: 80%;
+        background-color: rgba(30,31,36, .7);
+    }
+
+    td, a, tr {
+        color: gold;
+    }
+</style>

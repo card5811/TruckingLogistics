@@ -4,7 +4,7 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Hermes Logistics</h2>
+<h2>Employees</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
@@ -20,44 +20,68 @@
     </div>
 }
 
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.CompanyUserId)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.UserName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.FirstName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.LastName)
-        </th>
-        <th></th>
-    </tr>
 
-    @foreach (var item in Model)
-    {
+<container class="Container3">
+    <table class="table">
         <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.CompanyUserId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.UserName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.FirstName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.LastName)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.CompanyUserId }) |
-                @Html.ActionLink("Details", "Details", new { id = item.CompanyUserId }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.CompanyUserId })
-            </td>
+            <th>
+                @Html.DisplayNameFor(model => model.CompanyUserId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UserName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LastName)
+            </th>
+            <th></th>
         </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CompanyUserId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UserName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FirstName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LastName)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.CompanyUserId }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.CompanyUserId }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.CompanyUserId })
+                </td>
+            </tr>
+        }
+    </table>
+</container>
+
+<style>
+    .h2 {
+        color: gold;
     }
 
-</table>
+    body {
+        background-image: url('../../Content/Assets/semis.jpeg');
+        background-repeat: no-repeat;
+        background-size: 100%;
+    }
+
+        .table {
+        position: center center;
+        width: 80%;
+        background-color: rgba(30,31,36, .7);
+    }
+
+    td, a, tr {
+        color: gold;
+    }
+</style>

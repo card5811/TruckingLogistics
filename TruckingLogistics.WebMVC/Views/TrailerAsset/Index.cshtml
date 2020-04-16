@@ -32,32 +32,56 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-<tr>
-    <td>
-        @Html.DisplayFor(modelItem => item.TrailerId)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.TrailerNumber)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.TrailerVinNumber)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.TypeOfTrailer)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.TrailerMileage)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.Comment)
-    </td>
-    <td>
-        @Html.ActionLink("Edit", "Edit", new { id = item.TrailerId }) |
-        @Html.ActionLink("Details", "Details", new { id = item.TrailerId }) |
-        @Html.ActionLink("Delete", "Delete", new { id = item.TrailerId })
-    </td>
-</tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TrailerId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TrailerNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TrailerVinNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TypeOfTrailer)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TrailerMileage)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Comment)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.TrailerId }) |
+                @Html.ActionLink("Details", "Details", new { id = item.TrailerId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.TrailerId })
+            </td>
+        </tr>
+    }
 
 </table>
+
+
+<style>
+    .h2 {
+        color: gold;
+    }
+
+    body {
+        background-image: url('../../Content/Assets/semis.jpeg');
+        background-repeat: no-repeat;
+        background-size: 100%;
+    }
+
+    .table {
+        position: center center;
+        width: 80%;
+        background-color: rgba(30,31,36, .7);
+    }
+
+    td, a, tr {
+        color: gold;
+    }
+</style>

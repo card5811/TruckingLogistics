@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <title>@ViewBag.Title Hermes Logistics</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 
@@ -31,20 +31,28 @@
 
     @if (User.Identity.IsAuthenticated)
     {
-        <ul class="nav flex-column">
-            <li>
-                @Html.ActionLink("Employees", "Index", "UserProfile")
-            </li>
-            <li class="nav-item">
-                @Html.ActionLink("Trucks", "Index", "TruckAsset")
-            </li>
-            <li class="nav-item">
-                @Html.ActionLink("Trailer", "Index", "TrailerAsset")
-            </li>
-            <li class="nav-item">
-                @Html.ActionLink("Roster", "Index", "Asset")
-            </li>
-        </ul>
+        <div class="navbar navbar">
+            <div class="container2">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    </button>
+                </div>
+                <ul class="nav flex-column">
+                    <li>
+                        @Html.ActionLink("Employees", "Index", "UserProfile")
+                    </li>
+                    <li class="horizontal-nav-item">
+                        @Html.ActionLink("Trucks", "Index", "TruckAsset")
+                    </li>
+                    <li class="horizontal-nav-item">
+                        @Html.ActionLink("Trailer", "Index", "TrailerAsset")
+                    </li>
+                    <li class="horizontal-nav-item">
+                        @Html.ActionLink("Roster", "Index", "Asset")
+                    </li>
+                </ul>
+            </div>
+        </div>
     }
 
     <div class="container body-content">
@@ -60,3 +68,54 @@
     @RenderSection("scripts", required: false)
 </body>
 </html>
+<style>
+    h1, h2, h3, h4, h5, h6,
+    .h1, .h2, .h3, .h4, .h5, .h6 {
+        margin-bottom: 0.5rem;
+        font-family: "Merriweather Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+        font-weight: 500;
+        line-height: 1.2;
+        color: gold;
+    }
+
+    h1, .h1 {
+        font-size: 2.5rem;
+    }
+
+    h2, .h2 {
+        font-size: 2rem;
+    }
+
+    h3, .h3 {
+        font-size: 1.75rem;
+    }
+
+    h4, .h4 {
+        font-size: 1.5rem;
+    }
+
+    h5, .h5 {
+        font-size: 1.25rem;
+    }
+
+    h6, .h6 {
+        font-size: 1rem;
+    }
+
+    p, a {
+        color: gold;
+        opacity: 1;
+    }
+
+    .container2 {
+        position: absolute;
+        top: 10px;
+        background-color: rgba(30,31,36, .5);
+    }
+
+    footer {
+        position: absolute;
+        left: 450px;
+        background-color: rgba(30,31,36, .7);
+    }
+</style>
